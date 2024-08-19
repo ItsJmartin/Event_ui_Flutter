@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:projectevent/page_three.dart';
 import 'page_two.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: const JoinGroup(),
+      home: const ScreenOne(),
     );
   }
 }
@@ -64,16 +64,20 @@ class ScreenOne extends StatelessWidget {
                           ),
 
                           const SizedBox(
-                              width: 13), //gap between icon and profile
+                              width: 10), //gap between icon and profile
 
-                          Container(
-                            width: 50,
+                          SizedBox(
                             height: 50,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                  image: AssetImage("assets/iconpng/man.png"),
-                                  fit: BoxFit.fill),
+                            width: 50,
+                            child: CircleAvatar(
+                              backgroundColor: Color.fromARGB(255, 11, 207, 221),
+                              child: Image(
+                                image: AssetImage(
+                                  "assets/iconpng/profile.png",
+                                ),
+                                height: 45,
+                                width: 45,
+                              ),
                             ),
                           ),
                         ],
@@ -113,7 +117,7 @@ class ScreenOne extends StatelessWidget {
                         TextSpan(
                             text: '3',
                             style: GoogleFonts.nunito(
-                              color: const Color(0xff2986cc),
+                              color: const Color(0xff1152f3),
                               fontSize: 30,
                               fontWeight: FontWeight.w600,
                             )),
@@ -167,134 +171,260 @@ class ScreenOne extends StatelessWidget {
                   children: <Widget>[
                     // card 1
                     Container(
-                      child: Container(
-                        padding: const EdgeInsets.all(15),
-                        width: 330,
-                        decoration: const BoxDecoration(
-                            color: Color(0xff3868dd),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(40),
-                            )),
-                        //card inner detailes
-                        child: Column(
-                          //column for vertical alignment of the container
-                          children: <Widget>[
-                            //row for the horizontal alignment of the container
+                      width: 330,
+                      decoration: const BoxDecoration(
+                        color: Color(0xff3a73f5),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(40),
+                        ),
+                      ),
+                      child: Stack(children: <Widget>[
+                        ////////////////////// image in card
+                        Positioned(
+                          right: -85,
+                          top: 30,
+                          child: Container(
+                            child: Image(
+                              alignment: Alignment.centerRight,
+                              image: AssetImage("assets/iconpng/house.png"),
+                              height: 240,
+                              width: 240,
+                            ),
+                          ),
+                        ),
+                        ////////////////////// detailes in card
+                        Container(
+                          padding: EdgeInsets.fromLTRB(16.1, 16.1, 0, 16.1),
+                          child: Column(children: <Widget>[
+                            Row(children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                    color: Color(0xffffffff),
+                                    borderRadius: BorderRadius.circular(30)),
+                                child: Row(children: <Widget>[
+                                  SizedBox(
+                                    height: 28,
+                                    width: 28,
+                                    child: CircleAvatar(
+                                      backgroundColor: Color(0xff0000000),
+                                      child: Image(
+                                        image: AssetImage(
+                                          "assets/iconpng/illustrator.png",
+                                        ),
+                                        height: 18,
+                                        width: 18,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 5), // gap between contents
+                                  Text("Illustrator Community",
+                                      style:
+                                          GoogleFonts.nunito(letterSpacing: 0))
+                                ]),
+                              ),
+                            ]),
+
+                            SizedBox(height: 30), //gap between content
+
                             Row(
                               children: <Widget>[
-                                // icon with text light background container
-                                Container(
-                                  padding: const EdgeInsets.all(3),
-                                  decoration: const BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(50)),
-                                    color: Color(0xfffffefe),
+                                SizedBox(
+                                  width: 230,
+                                  child: Text(
+                                    "3D Design bootcamp",
+                                    style: GoogleFonts.nunito(
+                                        letterSpacing: 1,
+                                        height: 1,
+                                        color: Colors.white,
+                                        fontSize: 40,
+                                        fontWeight: FontWeight.bold),
                                   ),
-
-                                  // container with image file, text and their properties
-                                  child: Row(
-                                    children: <Widget>[
-                                      Container(
-                                        // Container used for giving circular paddin for logo.
-                                        padding: const EdgeInsets.all(5),
-                                        decoration: const BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: Color(0xff403b34)),
-                                        child: Container(
-                                          height: 20,
-                                          width: 20,
-                                          decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      "assets/iconpng/illustrator.png"),
-                                                  fit: BoxFit.fill)),
-                                        ),
-                                      ),
-
-                                      // gap between icon and text
-                                      const SizedBox(
-                                        width: 5,
-                                      ),
-
-                                      // text
-                                      SizedBox(
-                                        child: Text("Illustrator Community",
-                                            style: GoogleFonts.nunito(
-                                              color: Colors.black,
-                                            )),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                )
                               ],
                             ),
 
-                            const SizedBox(
-                              height: 20,
-                            ),
+                            SizedBox(height: 15), //gap between content
 
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              child: Column(
-                                children: <Widget>[
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: SizedBox(
-                                          child: Text("3D Design bootcamp",
-                                              style: GoogleFonts.nunito(
-                                                  height: 1,
-                                                  color: Colors.white,
-                                                  fontSize: 35,
-                                                  fontWeight: FontWeight.w500)),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: SizedBox(
-                                          child: Text(
-                                              "Unveiling the Future of the digital dimension!",
-                                              style: GoogleFonts.nunito(
-                                                  height: 1,
-                                                  color: Colors.white,
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.w500)),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                            Row(children: <Widget>[
+                              SizedBox(
+                                width: 200,
+                                child: Text(
+                                    "Unveiling the Future of the digital dimension!",
+                                    style: GoogleFonts.nunito(
+                                        height: 1,
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500)),
                               ),
-                            )
-                          ],
+                            ]),
+                            SizedBox(height: 30), //gap between content
+
+                            Row(children: [
+                              Icon(
+                                Icons.location_on_sharp,
+                                color: Color(0xffffffff),
+                                size: 18,
+                              ),
+                              SizedBox(width: 5), //gap between content
+
+                              Text("San Francisco",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Color(0xffffffff),
+                                  )),
+                            ]),
+
+                            SizedBox(height: 15), //gap between content
+
+                            Row(children: [
+                              Icon(
+                                Icons.timer,
+                                color: Color(0xffffffff),
+                                size: 18,
+                              ),
+                              SizedBox(width: 5), //gap between content
+
+                              Text("28 June 2023 7:30 AM GMT +7",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Color(0xffffffff),
+                                  )),
+                            ]),
+                          ]),
                         ),
-                      ),
+                      ]),
                     ),
 
-                    const SizedBox(width: 15), // gap between cards
+                    const SizedBox(
+                        width:
+                            15), // gap between cards/////////////////////////
 
                     // card 2
                     Container(
-                      alignment: Alignment.centerRight,
-                      // padding: const EdgeInsets.all(15),
                       width: 330,
                       decoration: const BoxDecoration(
-                          color: Color(0xff53d373),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(40),
-                          )),
-                      child: const Image(
-                        height: 200,
-                        width: 200,
-                        image: AssetImage("assets/iconpng/house.png"),
+                        color: Color(0xff53d373),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(40),
+                        ),
                       ),
+                      child: Stack(children: <Widget>[
+                        ////////////////////// image in card
+                        Positioned(
+                          right: -85,
+                          top: 30,
+                          child: Container(
+                            child: Image(
+                              alignment: Alignment.centerRight,
+                              image: AssetImage("assets/iconpng/house2.png"),
+                              height: 240,
+                              width: 240,
+                            ),
+                          ),
+                        ),
+                        ////////////////////// detailes in card
+                        Container(
+                          padding: EdgeInsets.fromLTRB(16.1, 16.1, 0, 16.1),
+                          child: Column(children: <Widget>[
+                            Row(children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                    color: Color(0xffffffff),
+                                    borderRadius: BorderRadius.circular(30)),
+                                child: Row(children: <Widget>[
+                                  SizedBox(
+                                    height: 28,
+                                    width: 28,
+                                    child: CircleAvatar(
+                                      backgroundColor: Color(0xff0000000),
+                                      child: Image(
+                                        image: AssetImage(
+                                          "assets/iconpng/figma.png",
+                                        ),
+                                        height: 18,
+                                        width: 18,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 5), // gap between contents
+                                  Text("Figma Community",
+                                      style:
+                                          GoogleFonts.nunito(letterSpacing: 0))
+                                ]),
+                              ),
+                            ]),
+
+                            SizedBox(height: 30), //gap between content
+
+                            Row(
+                              children: <Widget>[
+                                SizedBox(
+                                  width: 230,
+                                  child: Text(
+                                    "UI Design bootcamp",
+                                    style: GoogleFonts.nunito(
+                                        letterSpacing: 1,
+                                        height: 1,
+                                        color: Colors.white,
+                                        fontSize: 40,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                )
+                              ],
+                            ),
+
+                            SizedBox(height: 15), //gap between content
+
+                            Row(children: <Widget>[
+                              SizedBox(
+                                width: 200,
+                                child: Text(
+                                    "Unveiling the Future of the digital dimension!",
+                                    style: GoogleFonts.nunito(
+                                        height: 1,
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500)),
+                              ),
+                            ]),
+                            SizedBox(height: 30), //gap between content
+
+                            Row(children: [
+                              Icon(
+                                Icons.location_on_sharp,
+                                color: Color(0xffffffff),
+                                size: 18,
+                              ),
+                              SizedBox(width: 5), //gap between content
+
+                              Text("San Francisco",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Color(0xffffffff),
+                                  )),
+                            ]),
+
+                            SizedBox(height: 15), //gap between content
+
+                            Row(children: [
+                              Icon(
+                                Icons.timer,
+                                color: Color(0xffffffff),
+                                size: 18,
+                              ),
+                              SizedBox(width: 5), //gap between content
+
+                              Text("28 June 2023 7:30 AM GMT +7",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Color(0xffffffff),
+                                  )),
+                            ]),
+                          ]),
+                        ),
+                      ]),
                     ),
                   ],
                 ),
@@ -328,9 +458,9 @@ class ScreenOne extends StatelessWidget {
               ),
               const SizedBox(height: 15), //gap between sections
 
-              // oval horizontal container
+              //ovel shaped list view.
               SizedBox(
-                height: 100, // height of the list view
+                height: 80, // height of the list view
                 child: ListView(
                   padding:
                       const EdgeInsetsDirectional.fromSTEB(16.1, 0, 16.1, 0),
@@ -455,7 +585,7 @@ class ScreenOne extends StatelessWidget {
                           width: 130,
                           height: 60,
                           decoration: BoxDecoration(
-                            color: Color(0xff3868dd),
+                            color: Color(0xff1152f3),
                             borderRadius: BorderRadius.all(Radius.circular(50)),
                           ),
                           child: Row(

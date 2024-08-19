@@ -61,10 +61,11 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/iconpng/man.png
+    - assets/iconpng/profile.png
     - assets/iconpng/illustrator.png
     - assets/iconpng/figma.png
     - assets/iconpng/house.png
+    - assets/iconpng/house2.png
     - assets/iconpng/person1.png
     - assets/iconpng/person2.png
     - assets/iconpng/person3.png
@@ -74,6 +75,9 @@ flutter:
     - assets/iconpng/person7.png
     - assets/iconpng/person8.png
     - assets/iconpng/person9.png
+    - assets/iconpng/civil-engineering.png
+    - assets/iconpng/artitect-design.png
+    
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
