@@ -70,7 +70,7 @@ class ScreenOne extends StatelessWidget {
                             height: 50,
                             width: 50,
                             child: CircleAvatar(
-                              backgroundColor: Color.fromARGB(255, 11, 207, 221),
+                              backgroundColor: Color.fromARGB(255, 124, 220, 227),
                               child: Image(
                                 image: AssetImage(
                                   "assets/iconpng/profile.png",
