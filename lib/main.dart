@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projectevent/page_three.dart';
 import 'page_two.dart';
 
 void main() {
@@ -14,7 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: const ScreenOne(),
+      home: PageView(
+        children: [
+          ScreenOne(),
+          EventPage(),
+          JoinGroup()
+        ],
+      ),
     );
   }
 }
@@ -70,7 +77,8 @@ class ScreenOne extends StatelessWidget {
                             height: 50,
                             width: 50,
                             child: CircleAvatar(
-                              backgroundColor: Color.fromARGB(255, 124, 220, 227),
+                              backgroundColor:
+                                  Color.fromARGB(255, 124, 220, 227),
                               child: Image(
                                 image: AssetImage(
                                   "assets/iconpng/profile.png",
@@ -207,7 +215,7 @@ class ScreenOne extends StatelessWidget {
                                     height: 28,
                                     width: 28,
                                     child: CircleAvatar(
-                                      backgroundColor: Color(0xff0000000),
+                                      backgroundColor: Color(0xff403b34),
                                       child: Image(
                                         image: AssetImage(
                                           "assets/iconpng/illustrator.png",
@@ -592,68 +600,58 @@ class ScreenOne extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 // icon 1
-                                SizedBox(
-                                  child: IconButton(
-                                    icon: const Icon(
-                                      Icons.home,
-                                      color: Colors.white,
-                                      size: 27,
-                                    ),
-                                    onPressed: () {
-                                      // Handle notification button press
-                                    },
+                                IconButton(
+                                  icon: const Icon(
+                                    Icons.home,
+                                    color: Colors.white,
+                                    size: 27,
                                   ),
+                                  onPressed: () {
+                                    // Handle notification button press
+                                  },
                                 ),
                                 // icon 2
-                                SizedBox(
-                                  child: Text(
-                                    "Home",
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 15,
-                                      color: const Color(0xffFFFFFF),
-                                    ),
+                                Text(
+                                  "Home",
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 15,
+                                    color: const Color(0xffFFFFFF),
                                   ),
                                 ),
                               ]),
                         ),
                         // icon 3
-                        SizedBox(
-                          child: IconButton(
-                            icon: const Icon(
-                              Icons.gps_not_fixed_outlined,
-                              color: Colors.black,
-                              size: 27,
-                            ),
-                            onPressed: () {
-                              // Handle notification button press
-                            },
+                        IconButton(
+                          icon: const Icon(
+                            Icons.gps_not_fixed_outlined,
+                            color: Colors.black,
+                            size: 27,
                           ),
+                          onPressed: () {
+                            // Handle notification button press
+                          },
                         ),
                         // icon 4
-                        SizedBox(
-                          child: IconButton(
-                            icon: const Icon(
-                              Icons.shopping_basket_outlined,
-                              color: Colors.black,
-                              size: 27,
-                            ),
-                            onPressed: () {
-                              // Handle notification button press
-                            },
+                        IconButton(
+                          icon: const Icon(
+                            Icons.shopping_basket_outlined,
+                            color: Colors.black,
+                            size: 27,
                           ),
+                          onPressed: () {
+                            // Handle notification button press
+                          },
                         ),
                         // icon 5
-                        SizedBox(
-                          child: IconButton(
-                            icon: const Icon(
-                              Icons.cloud_circle_outlined,
-                              color: Colors.black,
-                              size: 27,
-                            ),
-                            onPressed: () {
-                              // Handle notification button press
-                            },
+                        IconButton(
+                          icon: const Icon(
+                            Icons.cloud_circle_outlined,
+                            color: Colors.black,
+                            size: 27,
                           ),
+                          onPressed: () {
+                            // Handle notification button press
+                          },
                         ),
                       ],
                     ),

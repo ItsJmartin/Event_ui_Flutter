@@ -142,8 +142,7 @@ class JoinGroup extends StatelessWidget {
                               child: Text(
                                 '''Embrace the opportunity to connect, learn and grow\nalogside fello figma designers in one of the most vibrant\ndesign hubs in the world. We can't wait to welcome you to...''',
                                 style: GoogleFonts.nunito(
-                                  fontSize: 12.3,
-                                    color: Color(0xff8c8c8c)),
+                                    fontSize: 12.3, color: Color(0xff8c8c8c)),
                               ),
                             ),
                           )
@@ -281,7 +280,7 @@ class JoinGroup extends StatelessWidget {
                                 color: Color(0XFFeeebf9),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(30)),
-                                boxShadow: [
+                                boxShadow: [   // Shadow for the cards
                                   BoxShadow(
                                     color: Colors.grey.withOpacity(
                                         0.5), // Shadow color with opacity
@@ -500,14 +499,14 @@ class JoinGroup extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: <Widget>[
                                       Text(
-                                        "Prototype 101",
+                                        "Prototype 102",
                                         style: GoogleFonts.nunito(
                                             fontSize: 28,
                                             color: Color(0xffFFFFFF),
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
-                                        "Learn prototyping together in figma!",
+                                        "Learn prototyping together in Illustr!",
                                         style: GoogleFonts.nunito(
                                             color: Color(0xffFFFFFF),
                                             fontSize: 18,

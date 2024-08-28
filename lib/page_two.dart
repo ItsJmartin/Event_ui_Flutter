@@ -147,15 +147,14 @@ class EventPage extends StatelessWidget {
                   ),
                 ),
                 child: Column(children: <Widget>[
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 15),
                   Center(
                     child: Container(
+                      decoration: BoxDecoration(
+                          color: Color(0xffbdbfc4),
+                          borderRadius: BorderRadius.circular(50)),
                       width: 50,
-                      padding: const EdgeInsets.only(top: 5),
-                      child: const Divider(
-                        thickness: 5,
-                        color: Color(0xffbdbfc4),
-                      ),
+                      height: 5,
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -293,7 +292,7 @@ class EventPage extends StatelessWidget {
                                 ]),
                             const SizedBox(height: 10), // gap between contents
                             Container(
-                              // padding: EdgeInsets.only(left: 12),
+                              padding: EdgeInsets.only(left: 15),
                               height:
                                   50, // Height to contain overlapping circles
                               child: Stack(children: <Widget>[
